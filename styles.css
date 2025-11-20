@@ -3458,7 +3458,7 @@ footer {
 @media (max-width: 420px) {
 
   .mbook-abt h3 {
-    font-size: 43px;
+    font-size: 38px;
   }
   .courses-box {
     margin: .5rem 1rem;
@@ -3481,6 +3481,10 @@ footer {
 }
 
 @media (max-width: 390px) {
+
+   .mbook-abt h3 {
+    font-size: 37px;
+  }
   .mobile-navbar {
     gap: 1.2rem;
   }
@@ -3539,6 +3543,10 @@ footer {
 }
 
 @media (max-width: 375px) {
+
+   .mbook-abt h3 {
+    font-size: 35px;
+  }
   .mobile-navbar {
     gap: .9rem;
   }
