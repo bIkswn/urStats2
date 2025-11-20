@@ -1487,6 +1487,8 @@ footer {
 
 .log-set img {
   cursor: pointer;
+  width: fit-content;
+  height: 35px;
 }
 
 .log-mid-flex {
@@ -1612,7 +1614,7 @@ footer {
   display: flex;
   justify-content: center;
   margin-bottom: 15px;
-      gap: .5rem;
+  gap: .5rem;
 }
 
 .sign-in {
@@ -2806,7 +2808,7 @@ footer {
 
   .log-body {
     background: var(--bg);
-    margin-bottom: 95px;
+    margin-bottom: 75px;
   }
 
   .mlog-first-flex {
@@ -2861,6 +2863,7 @@ footer {
   .to-log-date {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
   }
 
@@ -2886,6 +2889,19 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+  }
+
+  .to-log-rate-right img {
+    cursor: pointer;
+    width: fit-content;
+    height: 40px;
+  }
+
+  .to-log-rate-right {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
   }
 
   .to-log-stars {
@@ -2896,14 +2912,29 @@ footer {
   .to-log-save {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 2rem;
   }
 
 
 
 
 
+  .to-log-date-right img:first-child {
+    width: fit-content;
+    height: 40px;
+  }
+
+  .to-log-date-right img:nth-child(2) {
+    width: fit-content;
+    height: 25px;
+  }
 
 
+  .to-log-date-right {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
 
 
 }
@@ -3129,6 +3160,10 @@ footer {
     width: fit-content;
     height: 77px;
   }
+
+  .to-log-date-right img:first-child {
+    height: 77px;
+  }
 }
 
 
@@ -3309,6 +3344,10 @@ footer {
     width: fit-content;
     height: 72px;
   }
+
+  .to-log-date-right img:first-child {
+    height: 72px;
+  }
 }
 
 @media (max-width: 475px) {
@@ -3321,6 +3360,10 @@ footer {
   .to-log-save img {
 
     height: 60px;
+  }
+
+  .to-log-date-right img:first-child {
+    height: 40px;
   }
 
   .to-log-type img {
@@ -3390,6 +3433,10 @@ footer {
   .courses-box {
     grid-template-columns: repeat(4, 1fr);
     gap: 8px;
+  }
+
+  .to-log-rate-right img {
+    height: 30px;
   }
 
 
