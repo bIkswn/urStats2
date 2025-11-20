@@ -2701,7 +2701,7 @@ footer {
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2.2rem;
+    padding: 0 .5rem;
   }
 
   .mnew-nav img:nth-child(2) {
