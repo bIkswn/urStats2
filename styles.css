@@ -2249,7 +2249,13 @@ footer {
 
 @media (max-width: 840px) {
 
-
+.log-in-badge {
+    position: absolute;
+    left: -8rem;
+    bottom: -5rem;
+    width: fit-content;
+    height: 150px;
+}
 
 
 
