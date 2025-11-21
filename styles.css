@@ -77,7 +77,7 @@
 .placeholder-text {
   display: none;
   position: absolute;
-  left: 5rem;
+  left: 6rem;
   color: var(--text);
   font-size: 20px;
 
@@ -585,6 +585,7 @@ hr {
   height: 40px;
   border-radius: 50%;
   border: 2px solid black;
+  cursor: pointer;
 }
 
 /* footer */
@@ -1025,12 +1026,14 @@ footer {
   height: 60px;
   border-radius: 50%;
   border: 2px solid black;
+  cursor: pointer;
 }
 
 .fsample-book {
   width: 175px;
   height: fit-content;
   border-radius: 20px;
+  cursor: poin;
 }
 
 .feed1 {
@@ -1081,6 +1084,7 @@ footer {
   display: flex;
   gap: 5px;
   align-items: center;
+  cursor: pointer;
 }
 
 .btn-heart img {
@@ -1094,6 +1098,7 @@ footer {
   display: flex;
   gap: 5px;
   align-items: center;
+  cursor:pointer
 
 }
 
@@ -1114,7 +1119,9 @@ footer {
 .ftop p:first-child {
   font-weight: 700;
   font-size: 20px;
+  cursor: pointer;
 }
+
 
 .scv-side-infos {
   padding-top: 5.55rem;
@@ -1226,6 +1233,41 @@ footer {
   display: flex;
 }
 
+.desktop-dropdowns {
+  position: relative;
+}
+
+.desktop-dropdowns:hover ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.ddlinks {
+  position: absolute;
+  left: 10px;
+  z-index: 100;
+background: var(--bg);
+   border-radius: 5px;
+   display: none;
+   border: 2px solid var(--text);
+}
+
+.ddlinks li {
+  list-style: none;
+  cursor: pointer;
+ color: var(--text);
+  text-wrap: nowrap;
+  padding: .7rem;
+
+transition: .2s;
+
+}
+
+.ddlinks li:hover {
+  opacity: .7;
+  
+}
+
 .drop-downs h4 {
   margin-right: 1rem;
 }
@@ -1235,6 +1277,8 @@ footer {
   background-color: #FFFFFF;
   border: #444 solid 2px;
   border-radius: 25px;
+  cursor: pointer;
+  
 }
 
 .addcourseTop {
@@ -1274,7 +1318,7 @@ footer {
 
 .first-books img {
   width: 100%;
-  border-radius: 20px;
+  border-radius: 10px;
   display: block;
   box-shadow: 0px 7px 15px -10px rgba(0, 0, 0, 1);
   transition: 0.1s ease-in-out;
@@ -1968,6 +2012,11 @@ footer {
 }
 
 @media (max-width: 1366px) {
+
+  .ddlinks li {
+    font-size: 13px;
+  }
+
   .l1-left h3 {
     font-size: 17px;
   }
@@ -2251,6 +2300,12 @@ footer {
 
 @media (max-width: 840px) {
 
+
+   .add-courses-box {
+         padding: 0 1rem;
+      }
+
+
   .log-in-badge {
     position: absolute;
     left: -8rem;
@@ -2284,10 +2339,7 @@ footer {
     background: var(--bg);
   }
 
-  .add-courses-box {
-    padding: 0;
-  }
-
+ 
   .addc-line {
     margin-bottom: 2rem;
   }
@@ -2299,6 +2351,7 @@ footer {
   .madd-head-box {
     display: flex;
     flex-direction: column;
+    padding: 0 1rem;
   }
 
   .madd-top-flex {
@@ -2320,18 +2373,43 @@ footer {
     color: var(--text-muted);
   }
 
+  .mdrop-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .mddlinks {
+    display: none;
+  }
+
+
+  .mddlinks li {
+    list-style: none;
+
+  }
+
+  .mddlinks li:hover {
+ opacity: .8;
+  }
+
   .mmain-dropdowns {
     display: flex;
     width: 100%;
     justify-content: space-between;
     padding: 1.5rem 1rem;
-    align-items: center;
+    
     border-radius: 24px;
     border: 1px solid rgba(16, 42, 67, 0.08);
     box-shadow: 0 6px 12px -8px rgba(0, 0, 0, 20);
     position: relative;
+    flex-direction: column;
 
+  }
 
+  .mmain-dropdowns:hover .mddlinks {
+    display: flex;
+    flex-direction: column;
   }
 
   .mdropdown-flex {
@@ -3379,6 +3457,14 @@ footer {
 
 @media (max-width: 475px) {
 
+      .madd-head-box {
+        padding: 0 1rem;
+      }
+
+      .add-courses-box {
+         padding: 0 1rem;
+      }
+
   .completed-title {
     font-size: 20px;
   }
@@ -3487,6 +3573,10 @@ footer {
 }
 
 @media (max-width: 390px) {
+
+      .mddlinks li {
+      font-size: 14px;
+    }
 
   .to-log {
     padding: 0rem;
