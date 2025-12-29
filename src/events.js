@@ -20,6 +20,7 @@ export function handleAddCourseHover(
   return function () {
     let popOption = this.querySelector(".img-option");
 
+    // get file name
     const fileName =
       this.querySelector("img")?.src.split("/").pop().split(".")[0] || "";
 
@@ -34,6 +35,7 @@ export function handleAddCourseHover(
 
     popOption.style.display = "flex";
 
+    // like feature / like button
     const likeButton = popOption.querySelector(".like-button");
     const savedLikes = getLikes();
     if (!Array.isArray(savedLikes)) savedLikes = [];
@@ -46,12 +48,13 @@ export function handleAddCourseHover(
     };
     if (!likeButton.dataset.clicked) {
       likeButton.addEventListener("click", () => {
-        ilikeu(getLikes, setLikes, toAdd, likeButton);
+        ilikeu(getLikes, setLikes, toAdd, likeButton, userBody, enrollMsgs);
       });
 
       likeButton.dataset.clicked = true;
     }
 
+    //add course button
     popOption.querySelector(".addthiscourse").addEventListener("click", () => {
       const addCourseModalExist = document.querySelector(".addCourseModal");
       if (addCourseModalExist) addCourseModalExist.remove();
