@@ -4,12 +4,12 @@ export function ilikeu(
   toAdd,
   likeButton,
   userBody,
-  enrollMsgs
+  enrollMsgs,
+  currentImage
 ) {
   const savedLikes = getLikes();
   if (!Array.isArray(savedLikes)) savedLikes = [];
   const isLiked = savedLikes.some((x) => x.like === toAdd.like);
-
 
   if (!isLiked) {
     likeButton.style.color = "red";
@@ -33,7 +33,10 @@ export function ilikeu(
       "#F5C6CB solid 2px",
       userBody
     );
+   
   }
+   currentImage.style.filter = isLiked ? "brightness(0.5)" : "brightness(1)";
+
 }
 
 export function displayLikes(getLikes) {
@@ -41,15 +44,16 @@ export function displayLikes(getLikes) {
   if (!Array.isArray(savedLikes)) savedLikes = [];
   const likesBox = document.querySelector(".likes-box");
   if (savedLikes && likesBox) {
-    likesBox.innerHTML = savedLikes.map(
-      (course) =>
-        `
+    likesBox.innerHTML = savedLikes
+      .map(
+        (course) =>
+          `
    <div class="likedBook">
-<img src="assets/MAIN PAGE/${course.like}.png" alt="" />
+<img src="assets/MAIN PAGE/${course.like}.png" alt="" class='book'/>
             </div>
 `
-    ).join("");
+      )
+      .join("");
   } else {
-
   }
 }

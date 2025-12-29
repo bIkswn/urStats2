@@ -281,6 +281,24 @@ hr {
   resize: none;
 }
 
+.more-options {
+  display: flex;
+  gap: 1rem;
+padding: .8rem;
+border: 2px solid #102a43;
+width: fit-content;
+border-radius: 5px;
+}
+
+.more-options a {
+  text-decoration: none;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.more-options a:hover {
+  text-decoration: underline;
+}
 .user-details textarea::placeholder {
   color: #7d8796;
 }
@@ -2052,15 +2070,20 @@ footer {
 }
 
 .likes-box {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  display: flex;
   gap: 12px;
 
+  
+}
+
+.likedBook{
+   position: relative;
 }
 
 
 
-.likedBook img {
+.likedBook .book {
+   
   width: 150px;
   border-radius: 12px;
   display: block;

@@ -5,7 +5,7 @@ import {
   setBio,
   setUsername,
   setLikes,
-  getLikes
+  getLikes,
 } from "./src/storage.js";
 import { displayEnrolledCourses } from "./src/ui.js";
 import {
@@ -35,10 +35,9 @@ if (bioInput) {
   bioInput.addEventListener("blur", handleBioBlur(bioInput, setBio));
 }
 
-if (likedBody){
-  displayLikes(getLikes)
+if (likedBody) {
+  displayLikes(getLikes);
 }
-
 
 // User page initialization
 if (enrolledBox) {
@@ -57,8 +56,6 @@ if (enrolledBox) {
   userUsername.innerText = getUsername();
 }
 
-
-
 // Add course controls
 document.querySelectorAll(".book1").forEach((book) => {
   book.addEventListener(
@@ -68,6 +65,16 @@ document.querySelectorAll(".book1").forEach((book) => {
 
   book.addEventListener("mouseleave", handleHoverLeave);
 });
+
+document.querySelectorAll(".likedBook").forEach((book) => {
+  book.addEventListener(
+    "mouseenter",
+    handleAddCourseHover(userBody, enrolledBox, handleHoverLeave)
+  );
+
+  book.addEventListener("mouseleave", handleHoverLeave);
+});
+
 
 document.querySelectorAll(".book-enrolled").forEach((book) => {
   book.addEventListener(

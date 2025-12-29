@@ -19,6 +19,7 @@ export function handleAddCourseHover(
 ) {
   return function () {
     let popOption = this.querySelector(".img-option");
+    const currentImage = this.querySelector("img")
 
     // get file name
     const fileName =
@@ -30,7 +31,7 @@ export function handleAddCourseHover(
       popOption.innerHTML = `<img src="assets/addcourse/icon.png" alt="" class='addthiscourse'>\n   
             <i class="fa-solid fa-heart like-button"></i>\n                
                       <img src="assets/addcourse/Frame.png" alt="">`;
-      this.appendChild(popOption);
+      this.append(popOption);
     }
 
     popOption.style.display = "flex";
@@ -48,7 +49,8 @@ export function handleAddCourseHover(
     };
     if (!likeButton.dataset.clicked) {
       likeButton.addEventListener("click", () => {
-        ilikeu(getLikes, setLikes, toAdd, likeButton, userBody, enrollMsgs);
+        ilikeu(getLikes, setLikes, toAdd, likeButton, userBody, enrollMsgs, currentImage);
+      
       });
 
       likeButton.dataset.clicked = true;
