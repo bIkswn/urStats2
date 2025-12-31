@@ -4,21 +4,23 @@ import {
   getUsername,
   setBio,
   setUsername,
-  setLikes,
+  setLike,
   getLikes,
 } from "./src/storage.js";
-import { displayEnrolledCourses } from "./src/ui.js";
+import { displayEnrolledCourses, initGoals } from "./src/ui.js";
 import {
   handleAddCourseHover,
   handleEnrolledHover,
   handleHoverLeave,
   handleLogin,
   handleBioBlur,
+  enrollMsgs,
 } from "./src/events.js";
-import { displayLikes } from "./src/addcourse.js";
+import { displayLikes, searchBook } from "./src/addcourse.js";
 
 // kuya doms
 const enrolledBox = document.querySelector(".courses-box");
+const goalsBox = document.querySelector('.goals-box')
 const bioInput = document.querySelector(".user-input");
 const userUsername = document.querySelector(".user-details h1");
 const myUsername = document.querySelector(".enterMyuser");
@@ -27,6 +29,7 @@ const loginBtn = document.querySelector(
 );
 const userBody = document.querySelector("body");
 const likedBody = document.querySelector("body .liked-body");
+const addCBody = document.querySelector('body .add-body')
 
 // Banat
 
@@ -37,10 +40,17 @@ if (bioInput) {
 
 if (likedBody) {
   displayLikes(getLikes);
+
+
+}
+
+if(addCBody){
+  searchBook()
 }
 
 // User page initialization
 if (enrolledBox) {
+
   displayEnrolledCourses(
     enrolledBox,
     handleEnrolledHover(
@@ -54,6 +64,9 @@ if (enrolledBox) {
   );
   bioInput.value = getBio();
   userUsername.innerText = getUsername();
+
+  initGoals(goalsBox,userBody,enrollMsgs)
+  
 }
 
 // Add course controls

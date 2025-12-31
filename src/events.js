@@ -5,18 +5,16 @@ import {
   setUsername,
   setBio,
   getLikes,
-  setLikes,
+  setLike,
 } from "./storage.js";
 import { displayEnrolledCourses, removeEnrolledCourse } from "./ui.js";
 import { ilikeu } from "./addcourse.js";
 
 // banat
-export function handleAddCourseHover(
-  userBody,
+export function handleAddCourseHover( userBody,
   enrolledBox,
   handleEnrolledHover,
-  handleHoverLeave
-) {
+  handleHoverLeave) {
   return function () {
     let popOption = this.querySelector(".img-option");
     const currentImage = this.querySelector("img")
@@ -49,7 +47,7 @@ export function handleAddCourseHover(
     };
     if (!likeButton.dataset.clicked) {
       likeButton.addEventListener("click", () => {
-        ilikeu(getLikes, setLikes, toAdd, likeButton, userBody, enrollMsgs, currentImage);
+        ilikeu(getLikes, setLike, toAdd, likeButton, userBody, enrollMsgs, currentImage);
       
       });
 
@@ -86,6 +84,7 @@ export function handleAddCourseHover(
       confYes.addEventListener("click", () => {
         addCourseModal.remove();
         const toAdd = { book: fileName };
+
         let savedCourses = getSavedCourses();
         if (!savedCourses.some((c) => c.book === toAdd.book)) {
           savedCourses.push(toAdd);

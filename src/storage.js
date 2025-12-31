@@ -24,7 +24,15 @@ export function setUsername(name) {
 export function getLikes() {
   return JSON.parse(localStorage.getItem("likes")) || [];
 }
-export function setLikes(likes) {
+export function setLike(likes) {
   localStorage.setItem("likes", JSON.stringify(likes));
 }
 
+
+export function getGoals(){
+  return JSON.parse(localStorage.getItem("goals")) || []
+}
+
+export function setGoal(goal){
+  localStorage.setItem("goals", JSON.stringify(goal)) 
+}
